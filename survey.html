@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey-Form</title>
+
+    <style media="screen">
+      @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
+
+      body {
+        background: #a9d7d1;
+        text-align: center;
+        font-family: 'Raleway', Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+
+      #title {
+        margin: 25px auto;
+        text-align: center;
+      }
+
+      #container {
+        width: 75%;
+        max-width: 900px;
+        background: rgb(250, 250, 250);
+        margin: 0 auto;
+        height: auto;
+        border-radius: 5px;
+        padding: 2em;
+      }
+
+      form {
+        height: 950px;
+      }
+
+      .labels, .answers {
+        display: inline-block;
+        width: 50%;
+        /*outline: 1px solid grey;*/
+        margin: 10px 0;
+      }
+
+      .labels {
+        float: left;
+        height: 50px;
+        text-align: right;
+        font-size: 1rem;
+      }
+
+      .labels>label {
+        line-height: 50px;
+        float: right;
+        margin-right: 12.5px;
+      }
+
+      .answers {
+        float: right;
+        height: 50px;
+        font-size: 1rem;
+      }
+
+      .answers input {
+        height: 25px;
+        min-width: 60%;
+        margin-top: 9px;
+        float: left;
+        margin-left: 12.5px;
+      }
+
+      .answers .role {
+        height: 35px;
+        min-width: 35%;
+        margin-top: 9px;
+        float: left;
+        margin-left: 12.5px;
+      }
+
+      .labels .radio-label {
+        line-height: 25px;
+      }
+
+      .radio {
+        text-align: left;
+        float: left;
+      }
+
+      input#friends, input#friendss, input#friendsss {
+        min-width: 1px;
+        margin: 0;
+        margin-left: 12.5px;
+        margin-right: 5px;
+        height: 15px;
+        display: block;
+      }
+
+      .radio-wrap {
+        height: 60px;
+        padding: 7px 0;
+      }
+
+      .future-wrap {
+        height: 400px;
+        padding: 7px 0;
+
+      }
+
+      input#future.future, input.future {
+        text-align: left;
+        float: none;
+        display: inline-block;
+        min-width: 15px;
+        margin: 0 10px 22px 12.5px;
+        margin-top: 0px;
+        height: 15px;
+      }
+
+      .wrap2 {
+        text-align: left;
+      }
+
+      .comment-wrap {
+        height: 70px;
+        text-align: left;
+      }
+
+      .comment-wrap textarea {
+        margin-left: 12.5px;
+      }
+
+      input#submit {
+        position: relative;
+        left: 25%;
+        padding: 0.9em 2em;
+        margin: 40px auto;
+        background-color: #59ace0;
+        border-radius: 4px;
+        color: white;
+        font-size: 1em;
+        border: 0px solid;
+        cursor: pointer;
+      }
+    </style>
+
+</head>
+<body>
+
+  <!-- Title -->
+  <h1 id="title">Survey Form</h1>
+
+  <!-- Survey Outer Container -->
+  <div id="container">
+    <!-- Description -->
+    <p id="description">Let us know how we can improve freeCodeCamp</p>
+
+    <!-- Form -->
+    <form id="survey-form" method="GET" action="https://crossorigin.me/https://freecodecamp.com">
+      <section>
+        <div>
+          <div class="labels">
+            <label id="name-label" for="name"><span class="aterisk">*</span>Name:</label>
+          </div>
+
+          <div class="answers">
+            <input id="name" type="text" name="name" value="" placeholder="Enter your Name" required>
+          </div>
+
+          <div class="labels">
+            <label id="email-label" for="email"><span class="aterisk">*</span>Email:</label>
+          </div>
+
+          <div class="answers">
+            <input id="email" type="email" name="name" value="" placeholder="Enter your Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required>
+          </div>
+
+          <div class="labels">
+            <label id="number-label" for="number"><span class="aterisk">*</span>Age:</label>
+          </div>
+        </div>
+        <div>
+
+          <div class="answers">
+            <input id="number" type="number" min="10" max="10" name="name" value="" placeholder="Age">
+          </div>
+        </div>
+      </section>
+      <!-- Section 2 -->
+      <section>
+        <div class="labels">
+          <label for="role">Which option best describes your current role?</label>
+        </div>
+
+        <div id="dropdown" class="answers">
+          <select class="role" name="role" id="role">
+            <option value="" disabled selected>Select an option</option>
+            <option value="student">Student</option>
+            <option value="Full time job">Full Time Job</option>
+            <option value="student">Full time learner</option>
+            <option value="student">Prefer not to say</option>
+            <option value="student">Other</option>
+          </select>
+        </div>
+
+        <div class="labels radio-wrap">
+          <label class="radio-label" for="friends">
+            * How likely is that you would recommend freeCodeCamp to a friend?
+          </label>
+        </div>
+
+        <div class="answers radio-wrap">
+          <label class="radio" for="friends">
+            <input type="radio" name="friends" id="friends" value="Definitely">Definitely
+
+          </label>
+          <br>
+          <label class="radio" for="friendss">
+            <input type="radio" name="friends" id="friendss" value="Maybe">Maybe
+
+          </label>
+          <br>
+          <label  class="radio" for="friendsss">
+            <input type="radio" name="friends" id="friendsss" value="Not sure">Not Sure
+
+          </label>
+        </div>
+      </section>
+      <!-- Section 3 -->
+      <section>
+
+        <div class="labels future-wrap">
+          <label  for="future">
+            Things that should be improved in the future
+(Check all that apply):
+          </label>
+        </div>
+
+        <div class="answers future-wrap wrap2">
+          <input type="checkbox" class="future" name="future" id="future" value="Front-end Projects">Front-end Projects
+          <br>
+          <input type="checkbox" class="future" name="future" value="Back-end Projects">Back-end Projects
+          <br>
+          <input type="checkbox" class="future" name="future" value="Data Visualization">Data Visualization
+          <br>
+          <input type="checkbox" class="future" name="future" value="Challenges">Challenges
+          <br>
+          <input type="checkbox" class="future" name="future" value="Open Source Community">Open Source Community
+          <br>
+          <input type="checkbox" class="future" name="future" value="Glitter help rooms">Glitter help rooms
+          <br>
+          <input type="checkbox" class="future" name="future" value="Videos">Videos
+          <br>
+          <input type="checkbox" class="future" name="future" value="City Meetups">City Meetups
+          <br>
+          <input type="checkbox" class="future" name="future" value="Wiki">Wiki
+          <br>
+          <input type="checkbox" class="future" name="future" value="Forumn">Forumn
+          <br>
+          <input type="checkbox" class="future" name="future" value="Additional Courses">Additional Courses
+          <br>
+        </div>
+      </section>
+      <!-- Section 4 -->
+      <section>
+        <div class="labels ">
+          <label for="comment">Any Comments or Suggestions?</label>
+        </div>
+
+        <div class="answers comment-wrap">
+          <textarea name="comment" id="comment" rows="4" cols="30" placeholder="Enter your comment here..."></textarea>
+        </div>
+      </section>
+
+      <input type="submit" name="submit" value="submit" id="submit">
+
+    </form>
+  </div>
+
+
+  <!-- Test Suite -->
+  <script type="text/javascript" src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+  </script>
+</body>
+</html>
